@@ -1,0 +1,28 @@
+[package]
+name = "gosper"
+version = "0.1.0"
+authors = ["themadcreator@github"]
+edition = "2021"
+description = "arbitrary precision continued fraction arithmetic"
+repository = "https://github.com/themadcreator/gosper-rs"
+license = "MIT"
+keywords = ["arbitrary", "continued fraction", "arithmetic", "math"]
+categories = ["algorithms", "mathematics"]
+autoexamples = false
+
+[lib]
+name = "gosper"
+path = "src/lib.rs"
+
+[[example]]
+name = "constants"
+path = "examples/constants.rs"
+
+[dependencies]
+num = "0.1.27"
+
+[dev-dependencies]
+clap = { version = "4.1.13", features = ["derive"] }
+
+[package.metadata.docs.rs]
+rustdoc-args = [ "--html-in-header", "katex-header.html" ]

@@ -1,0 +1,5 @@
+# max_width = 80
+
+unstable_features = true
+wrap_comments = true
+# comment_width = 80
