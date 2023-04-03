@@ -72,13 +72,13 @@ where
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         let decimal_precision = f.precision().unwrap_or(DEFAULT_PRECISION).max(1) + 2;
 
-        let ref mut iter = *self.0.borrow_mut();
+        let iter = &mut (*self.0.borrow_mut());
         let mut index = 0;
         loop {
             match index {
-                0 => f.write_str(&iter.next().unwrap_or_else(|| Zero::zero()).to_string())?,
+                0 => f.write_str(&iter.next().unwrap_or_else(Zero::zero).to_string())?,
                 1 => f.write_str(".")?,
-                2 => f.write_str(&iter.next().unwrap_or_else(|| Zero::zero()).to_string())?,
+                2 => f.write_str(&iter.next().unwrap_or_else(Zero::zero).to_string())?,
                 _ if index >= decimal_precision => break,
                 _ => match iter.next() {
                     Some(i) => f.write_str(&i.to_string())?,
@@ -124,13 +124,13 @@ where
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         let precision = f.precision().unwrap_or(DEFAULT_PRECISION).max(1) + 1;
 
-        let ref mut iter = *self.0.borrow_mut();
+        let iter = &mut (*self.0.borrow_mut());
         let mut index = 0;
 
         f.write_str("[")?;
         loop {
             match index {
-                0 => f.write_str(&iter.next().unwrap_or_else(|| Zero::zero()).to_string())?,
+                0 => f.write_str(&iter.next().unwrap_or_else(Zero::zero).to_string())?,
                 _ if index >= precision => break,
                 _ if iter.peek().is_none() => break,
                 1 => {

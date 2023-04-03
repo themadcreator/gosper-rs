@@ -80,10 +80,10 @@ impl Iterator for Solver {
         } = &self.state;
 
         // handle negative rationals
-        let negative = match (b_2.sign(), b_1.sign()) {
-            (Sign::Plus, Sign::Minus) | (Sign::Minus, Sign::Plus) => true,
-            _ => false,
-        };
+        let negative = matches!(
+            (b_2.sign(), b_1.sign()),
+            (Sign::Plus, Sign::Minus) | (Sign::Minus, Sign::Plus)
+        );
 
         match ExtendedInt::divide_ints(b_2, b_1) {
             ExtendedInt::Infinity => None,
@@ -182,8 +182,8 @@ mod tests {
 
     #[test]
     fn it_round_trips_rationals() {
-        let terms = Solver::from((277, 642));
-        let Rational(num, den) = Rational::from(&mut terms.into_iter());
+        let mut terms = Solver::from((277, 642));
+        let Rational(num, den) = Rational::from(&mut terms);
         assert_eq!(num.to_i32().unwrap(), 277);
         assert_eq!(den.to_i32().unwrap(), 642);
     }
