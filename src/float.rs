@@ -1,8 +1,7 @@
-//! Lossy floating point conversion to/from continued fractions with the
-//! modified Lentz algorithm [0]
+//! Lossy floating point conversion to/from continued fractions.
 //!
-//! This method is lossy because it uses constant thresholds to terminate
-//! computation.
+//! This method is lossy because the modified Lentz algorithm[^1] uses constant
+//! thresholds to terminate computation.
 //!
 //! # Example
 //!
@@ -21,7 +20,7 @@
 //! assert_eq!(f, 1.2100000000000002);
 //! ```
 //!
-//! [0] §5.2. Press, W. H., Teukolsky, S. A., Vetterling, W. T.,, Flannery, B.
+//! [^1]: §5.2. Press, W. H., Teukolsky, S. A., Vetterling, W. T.,, Flannery, B.
 //!     P. (2007). Numerical Recipes 3rd Edition: The Art of Scientific
 //!     Computing. Cambridge University Press. ISBN: 0521880688
 use num::{BigInt, FromPrimitive};

@@ -4,7 +4,7 @@
 
 This library implements several methods for arbitrary precision continued
 fraction arithmetic based on Bill Gosper's inspired preprint work in the 2nd
-appendix of the MIT HAKMEM publication, where he writes:
+appendix of the MIT HAKMEM publication[^1], where he writes:
 
 >> [Abstract](https://perl.plover.com/classes/cftalk/INFO/gosper.txt): Contrary
 >> to everybody, [...] continued fractions are not only perfectly amenable to

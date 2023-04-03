@@ -1,13 +1,10 @@
 //! Rationals and integers projectively extended to include `Infinity`
 //!
-//! Allows divide by zero
+//! Extended reals allow divide by zero[^1]<sup>,</sup>[^2]
 //!
 //! ```text
 //! a / 0 = inf
 //! ```
-//!
-//! - [0] <https://en.wikipedia.org/wiki/Stereographic_projection>
-//! - [1] <https://en.wikipedia.org/wiki/Projectively_extended_real_line>
 //!
 //! # Example
 //!
@@ -21,7 +18,10 @@
 //!
 //! assert!(matches!(divided, ExtendedInt::Infinity));
 //! ```
-
+//!
+//! [^1]: <https://en.wikipedia.org/wiki/Stereographic_projection>
+//!
+//! [^2]: <https://en.wikipedia.org/wiki/Projectively_extended_real_line>
 use num::{BigInt, Signed, Zero};
 
 use crate::rational::Rational;

@@ -38,12 +38,15 @@
 //! let jenny = ContinuedFraction::from(867.5309);
 //! assert_eq!(jenny.to_f64(), 867.5309000000001);
 //! ```
+//!
+//! [^1]: <https://perl.plover.com/classes/cftalk/INFO/gosper.txt>
 
-// using a path annotation is necessary as continued_fraction.rs wants to
-// re-export a module in itself with the same name, which creates a conflict.
-// #[path = "continued_fraction.rs"]
+// re-export main continued fraction type
 mod continued_fraction;
 pub use continued_fraction::*;
+
+// re-export dependencies that appears in our public API
+pub use num::BigInt;
 
 pub mod bihomographic;
 pub mod consts;

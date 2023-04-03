@@ -1,5 +1,8 @@
 //! Arbitrary precision rational numbers
 //!
+//! A [`Solver`] will emit terms of the equivalent canonical regular continued
+//! fraction using the euclidean convergent algorithm[^1].
+//!
 //! # Example
 //!
 //! ```rust
@@ -16,6 +19,9 @@
 //! assert_eq!(num, BigInt::from(355));
 //! assert_eq!(den, BigInt::from(113));
 //! ```
+//!
+//! [^1]: Algorithm 9.3.2. Kornerup, P., & Matula, D.W. (2010). Finite Precision
+//!       Number Systems and Arithmetic.
 
 use num::{bigint::Sign, BigInt, One, Zero};
 
@@ -55,13 +61,7 @@ impl State {
     }
 }
 
-/// Implements the euclidean convergent algorithm [0].
-///
-/// Given a rational number, emits terms of the equivalent canonical regular
-/// continued fraction.
-///
-/// [0] Algorithm 9.3.2. Kornerup, P., & Matula, D.W. (2010). Finite Precision
-/// Number Systems and Arithmetic.
+/// Implements the euclidean convergent algorithm
 pub struct Solver {
     state: State,
 }
