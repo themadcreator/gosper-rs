@@ -14,10 +14,10 @@ He then goes on to describe an algorithm for producing a continued fraction
 representing arithmetic operations (+, -, *, /) between arbitrary continued
 fractions.
 
-The main benefit of this approach is that even if the operands have **infinite
-terms** (such as representations of transcendental numbers, e.g π), consuming enough
-terms of the operands can bound the next term of the result to within an integer
-range.
+The main benefit of this approach is that even if the operands are
+**non-terminating** continued fractions (such as representations of
+transcendental numbers, e.g π), consuming enough terms of the operands can bound
+the next term of the result to within the range of a single integer.
 
 In this way, the terms of the result can be read off one at a time, and
 computation can be discontinued when the desired accuracy is attained.

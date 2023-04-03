@@ -41,12 +41,12 @@
 //!
 //! [^1]: <https://perl.plover.com/classes/cftalk/INFO/gosper.txt>
 
+// re-export dependencies that appears in our public API
+pub use num;
+
 // re-export main continued fraction type
 mod continued_fraction;
 pub use continued_fraction::*;
-
-// re-export dependencies that appears in our public API
-pub use num::BigInt;
 
 pub mod bihomographic;
 pub mod consts;
