@@ -6,7 +6,7 @@ edition = "2021"
 description = "arbitrary precision continued fraction arithmetic"
 repository = "https://github.com/themadcreator/gosper-rs"
 license = "MIT"
-keywords = ["arbitrary", "continued fraction", "arithmetic", "math"]
+keywords = ["arbitrary", "continued-fraction", "arithmetic", "math"]
 categories = ["algorithms", "mathematics"]
 autoexamples = false
 
