@@ -23,6 +23,3 @@ num = "0.1.27"
 
 [dev-dependencies]
 clap = { version = "4.1.13", features = ["derive"] }
-
-[package.metadata.docs.rs]
-rustdoc-args = [ "--html-in-header", "katex-header.html" ]

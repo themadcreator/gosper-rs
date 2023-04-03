@@ -23,8 +23,6 @@ pub struct Rational<I: Iterator<Item = rational::Rational>>(pub I);
 /// Wrapper newtype for an iterator of decimal terms
 pub struct Decimal<I: Iterator<Item = BigInt>>(pub I);
 
-pub enum RegularT {}
-
 /// Convert a continued fraction reference to regular terms
 ///
 /// # Example
