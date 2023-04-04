@@ -1,5 +1,9 @@
 # gosper
 
+[![Crates.io](https://img.shields.io/crates/v/gosper.svg)](https://crates.io/crates/gosper)
+[![Docs.rs](https://docs.rs/gosper/badge.svg)](https://docs.rs/gosper)
+[![CI Status](https://github.com/themadcreator/gosper-rs/actions/workflows/ci.yml/badge.svg)](https://github.com/themadcreator/gosper-rs/actions)
+
 #### Continued Fraction Arithmetic
 
 This library implements several methods for arbitrary precision continued
